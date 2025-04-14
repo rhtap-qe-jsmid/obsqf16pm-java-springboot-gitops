@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: obsqf16pm-java-springboot-gitops
+  description: This is GitOps manifest for obsqf16pm-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=obsqf16pm-java-springboot
+    backstage.io/kubernetes-id: obsqf16pm-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-qe-jsmid/obsqf16pm-java-springboot-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:obsqf16pm-java-springboot
